@@ -5,5 +5,5 @@
 		    http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- 动漫基地 -->
-	<bean id="mkSmplotteryInfo" class="com.sitech.market.dbo.trading.impl.MkSmplotteryInfo" />
+	<bean id="mkSmplotteryInfo" class="com.sitech.market.dbo.common.impl.MkSmplotteryInfo" />
 </beans>

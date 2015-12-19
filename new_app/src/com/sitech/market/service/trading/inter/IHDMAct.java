@@ -1,4 +1,4 @@
-package com.sitech.market.trading.inter;
+package com.sitech.market.service.trading.inter;
 
 public interface IHDMAct {
 

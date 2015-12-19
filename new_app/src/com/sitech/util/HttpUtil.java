@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.sitech.util;
 
 import java.io.IOException;
@@ -24,10 +21,8 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 
 /** 
- * Create on 2015Äê10ÔÂ21ÈÕ 
  * @author: fengjj
  * @Title: HttpUtil 
- * @Description£º 
  * @version 1.0 
  * update_data:      update_author:      update_note: 
  */
@@ -36,7 +31,7 @@ public class HttpUtil {
     public static final int HTTP_METHOD_GET = 1;
     public static final int HTTP_METHOD_POST = 2;
     private static DefaultHttpClient httpClient = null;
-    private static Charset CHARSET = Charset.forName("GBK");
+    private static Charset CHARSET = Charset.forName("UTF-8");
     private static final int HTTPCLIENT_MAXTOTAL = 100;
     private static final int HTTPCLIENT_MAXPERROUTE =  20;
     private static final int HTTPCLIENT_CONTIMEOUT = 60000;
@@ -62,8 +57,7 @@ public class HttpUtil {
     }
 
     private static String invoke(String url, int method, String pin) {
-      if (log.isDebugEnabled())
-        log.debug("pin=" + pin);
+      log.debug("pin=" + pin);
       try
       {
         url = url.trim();

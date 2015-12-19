@@ -6,16 +6,33 @@
 		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
 	
-	<servlet>
-		<servlet-name>Resteasy</servlet-name>
-		<servlet-class>
-			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
-		</servlet-class>
-	</servlet>
+	<display-name>new app</display-name>
+
+   <listener>
+      <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+   </listener>
+
+   <listener>
+      <listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
+   </listener>
+
+   <servlet>
+      <servlet-name>myServlet</servlet-name>
+      <servlet-class>com.sitech.crmpd.MyServlet</servlet-class>
+   </servlet>
+	
+	<servlet-mapping>
+		<servlet-name>myServlet</servlet-name>
+		<url-pattern>/myServlet/*</url-pattern>
+	</servlet-mapping>
+   <servlet>
+      <servlet-name>Resteasy</servlet-name>
+      <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+   </servlet>
 	
 	<servlet-mapping>
 		<servlet-name>Resteasy</servlet-name>
-		<url-pattern>/rs/*</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 发布服务 end-->
